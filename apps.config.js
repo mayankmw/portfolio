@@ -7,6 +7,7 @@ import { displayTrash } from './components/apps/trash';
 import { displayGedit } from './components/apps/gedit';
 import { displayAboutMayank } from './components/apps/mayank';
 import { displayTerminalCalc } from './components/apps/calc';
+import { displaySnakeGame } from './components/apps/snakegame';
 
 const apps = [
     {
@@ -62,6 +63,15 @@ const apps = [
         favourite: true,
         desktop_shortcut: false,
         screen: displaySpotify, // India Top 50 Playlist 😅
+    },
+    {
+        id: "snake",
+        title: "Snake Game",
+        icon: './themes/Yaru/apps/snake-game.jpg',
+        disabled: false,
+        favourite: true,
+        desktop_shortcut: false,
+        screen: displaySnakeGame,
     },
     {
         id: "settings",

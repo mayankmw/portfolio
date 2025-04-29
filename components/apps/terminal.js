@@ -26,7 +26,7 @@ export class Terminal extends Component {
             interests: ["Software Engineering", "AI Applications", "Full-Stack Development", "Back End development"],
             languages: ["JavaScript"],
         };
-        
+
         this.state = {
             terminal: [],
         }
@@ -329,8 +329,66 @@ export class Terminal extends Component {
 
                 result = "<img class=' w-2/5' src='./images/memes/used-sudo-command.webp' />";
                 break;
+            case "hack-nasa":
+                this.removeCursor(rowId);
+                this.clearInput(rowId);
+                const hackMessages = [
+                    "Initiating top-secret connection to NASA mainframe... 🌐",
+                    "Establishing secure tunnel... 🔒",
+                    "Brute-forcing admin credentials... 🚪",
+                    "Decrypting classified documents... 🔑",
+                    "Installing quantum algorithms... 🧠",
+                    "Injecting zero-day exploit... 💉",
+                    "Accessing satellite controls... 🛰️",
+                    "Disabling security protocols... 🔓",
+                    "Downloading alien communication logs... 👽",
+                    "<span class='text-green-500'>Connection stabilized. Welcome, Agent 007.</span> 🕵️‍♂️",
+                    "<span class='text-yellow-500'>Transferring nuclear launch codes...</span> ☢️",
+                    `<span class='text-red-500 font-bold'>Access Denied!</span> 🚨 Your hacking skills are insufficient. Try again after watching <a href="https://www.primevideo.com/detail/Mr-Robot/0L52QDYY6OG738LB7ILP0VB7R4" target="_blank" class="text-blue-500 underline">Mr. Robot</a>.`
+                ];
+
+                hackMessages.forEach((msg, i) => {
+                    setTimeout(() => {
+                        $(`#row-result-${rowId}`).append(msg + "<br>");
+                    }, i * 1500);
+                });
+
+                setTimeout(() => {
+                    $(`#row-result-${rowId}`).append(
+                        `<img class='w-2/5 mt-4' src='./images/memes/hackerman.png' alt='Hackerman Fail Meme' />`
+                    );
+                }, hackMessages.length * 1500);
+                return;
+                return;
+            case "rm-rf":
+                this.removeCursor(rowId);
+                this.clearInput(rowId);
+                const rmMessages = [
+                    "Executing 'rm -rf /'... 🚨",
+                    "Deleting system files... 🗑️",
+                    "Removing critical directories: /boot, /usr, /etc... 🔥",
+                    "Erasing user data... 💾💨",
+                    "Uninstalling operating system... 🖥️❌",
+                    "Wiping memory sectors... 🧠",
+                    "System destabilizing... 💥",
+                    "Kernel panic detected... 😱",
+                    "Rebooting into void... 🌌",
+                    "<span class='text-red-500 font-bold'>Error!</span> 🚫 Cannot delete the universe. Better luck next time!"
+                ];
+
+                rmMessages.forEach((msg, i) => {
+                    setTimeout(() => {
+                        $(`#row-result-${rowId}`).append(msg + "<br>");
+                    }, i * 1500); // delay 1.5s per message
+                });
+                return;
+
+
+
             default:
-                result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-mayank, todoist, trash, settings, sendmsg ]";
+                result = "Command '" + main + "' not found, or not yet implemented.<br>Available Commands: [ cd, ls, pwd, echo, clear, exit, mkdir, code, spotify, chrome, about-mayank, todoist, trash, settings, sendmsg ].<br>Pro Tip: Typing 'hack-nasa' is a surefire way to feel like a hacker (but don't expect it to work 😉).<br><br>And for the love of all things digital, please don't type 'rm-rf'. Your system is not your personal dumpster. If you do, expect your files to wave goodbye like they're in the final scene of a disaster movie. 🚨😱"
+
+
         }
         document.getElementById(`row-result-${rowId}`).innerHTML = result;
         this.appendTerminalRow();
