@@ -5,7 +5,7 @@ import { displaySettings } from './components/apps/settings';
 import { displayChrome } from './components/apps/chrome';
 import { displayTrash } from './components/apps/trash';
 import { displayGedit } from './components/apps/gedit';
-import { displayAboutVivek } from './components/apps/vivek';
+import { displayAboutMayank } from './components/apps/mayank';
 import { displayTerminalCalc } from './components/apps/calc';
 
 const apps = [
@@ -28,23 +28,23 @@ const apps = [
         screen: displayTerminalCalc,
     },
     {
-        id: "about-vivek",
-        title: "About Vivek",
+        id: "about-mayank",
+        title: "About Mayank",
         icon: './themes/Yaru/system/user-home.png',
         disabled: false,
         favourite: true,
         desktop_shortcut: true,
-        screen: displayAboutVivek,
+        screen: displayAboutMayank,
     },
-    {
-        id: "vscode",
-        title: "Visual Studio Code",
-        icon: './themes/Yaru/apps/vscode.png',
-        disabled: false,
-        favourite: true,
-        desktop_shortcut: false,
-        screen: displayVsCode,
-    },
+    // {
+    //     id: "vscode",
+    //     title: "Visual Studio Code",
+    //     icon: './themes/Yaru/apps/vscode.png',
+    //     disabled: false,
+    //     favourite: true,
+    //     desktop_shortcut: false,
+    //     screen: displayVsCode,
+    // },
     {
         id: "terminal",
         title: "Terminal",
@@ -98,18 +98,8 @@ const apps = [
         favourite: false,
         desktop_shortcut: true,
         isExternalApp: true,
-        url: "https://github.com/vivek9patel",
+        url: "https://github.com/mayankmw",
         screen: () => {},
-    },
-    {
-        id: "tars",
-        title: "Ask Tars",
-        icon: './themes/Yaru/apps/tars.svg',
-        disabled: false,
-        favourite: false,
-        desktop_shortcut: true,
-        isExternalApp: true,
-        url: "https://www.vivek9patel.com/tars"
     },
 ]
 
